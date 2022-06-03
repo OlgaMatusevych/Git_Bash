@@ -1,0 +1,173 @@
+ 1 часть ДЗ
+
+1) Посмотреть где я
+$ pwd
+/c/Users/Ольця
+
+-Зашла на диск D
+$ cd /D
+
+2) Создать папку
+$ mkdir QA
+
+3) Зайти в папку
+Ольця@DESKTOP-N2IDPJA MINGW64 /D
+$ cd QA
+
+4) Создать 3 папки
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA
+$ mkdir Q{1..3}
+
+5) Зайти в любоую папку
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA
+$ cd Q1
+
+6) Создать 5 файлов (3 txt, 2 json)
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ touch qq{1..3}.txt n{1..2}json
+
+7) Создать 3 папки
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ mkdir qa{1..3}.txt
+
+8. Вывести список содержимого папки
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ ls -la
+total 4
+drwxr-xr-x 1 Ольця 197121 0 May 23 21:13 ./
+drwxr-xr-x 1 Ольця 197121 0 May 23 21:08 ../
+-rw-r--r-- 1 Ольця 197121 0 May 23 21:10 n1.json
+-rw-r--r-- 1 Ольця 197121 0 May 23 21:10 n2.json
+drwxr-xr-x 1 Ольця 197121 0 May 23 21:13 qa1/
+drwxr-xr-x 1 Ольця 197121 0 May 23 21:13 qa2/
+drwxr-xr-x 1 Ольця 197121 0 May 23 21:13 qa3/
+-rw-r--r-- 1 Ольця 197121 0 May 23 21:10 qq1.txt
+-rw-r--r-- 1 Ольця 197121 0 May 23 21:10 qq2.txt
+-rw-r--r-- 1 Ольця 197121 0 May 23 21:10 qq3.txt
+
+9) + Открыть любой txt файл
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ cat qq1.txt или vim qq1.txt
+
+10) + написать туда что-нибудь, любой текст.
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ cat >>qq1.txt 
+There are only two ways
+to live your life.
+One is as though
+nothing is a miracle.
+The other is as though
+everything is a miracle
+
+11) + сохранить и выйти.
+( cntr+c) если vim то esc + :wq
+
+12) Выйти из папки на уровень выше
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ mv qq1.txt qq2.txt /D/QA/Q2
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ cp qq3.txt n1.json /D/QA/Q3
+15) Найти файл по имени
+
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ find -name n1.json
+./n1.json
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ tail -f /D/QA/Q2/qq1.txt
+to live your life.
+
+17) вывести несколько первых строк из текстового файла
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ head -2 /D/QA/Q2/qq1.txt
+There are only two ways
+to live your life.
+
+18) вывести несколько последних строк из текстового файла
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$ tail -n2 /D/QA/Q2/qq1.txt
+nothing is a miracle.
+The other is as though
+
+20) вывести дату и время
+$ date "+%Y.%m.%m %H:%I:%M"
+2022.05.05 13:01:52
+
+Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA/Q1
+$
+
+
+Задание 2*
+1.1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+Ольця@DESKTOP-N2IDPJA MINGW64 ~
+$ curl http://162.55.220.72:5005/terminal-hw-request
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   283  100   283    0     0   3109      0 --:--:-- --:--:-- --:--:--  3144{
+  "Intro": "Hello!! This is your the first response from server",
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
+
+
+Ольця@DESKTOP-N2IDPJA MINGW64 ~
+$ curl  "http://162.55.220.72:5005/get_method?name=Olga&age=34"
+ % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    22  100    22    0     0    319      0 --:--:-- --:--:-- --:--:--   323[
+  "Olga",
+  "34"
+]
+
+ 
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Ольця@DESKTOP-N2IDPJA MINGW64 ~
+$ nano ( зашла в блокнот)
+ там прописала 
+#!/bin/bash
+
+cd /D
+mkdir QA_2
+cd /D/QA_2
+mkdir Q1 Q2 Q3
+cd Q1
+touch qq1.txt qq2.txt qq3.txt n1.json n2.json
+mkdir qa1 qa2 qa3
+ls -la
+mv qq1.txt qq2.txt /D/QA_2/Q2
+
+дальше Cntr+O назвала файл Olga.sh  дальше Cntr+X , потом запускаем наш скрипт
+
+Ольця@DESKTOP-N2IDPJA MINGW64 ~
+$ bash Olga.sh
+total 4
+drwxr-xr-x 1 Ольця 197121 0 May 25 15:41 .
+drwxr-xr-x 1 Ольця 197121 0 May 25 15:41 ..
+-rw-r--r-- 1 Ольця 197121 0 May 25 15:41 n1.json
+-rw-r--r-- 1 Ольця 197121 0 May 25 15:41 n2.json
+drwxr-xr-x 1 Ольця 197121 0 May 25 15:41 qa1
+drwxr-xr-x 1 Ольця 197121 0 May 25 15:41 qa2
+drwxr-xr-x 1 Ольця 197121 0 May 25 15:41 qa3
+-rw-r--r-- 1 Ольця 197121 0 May 25 15:41 qq1.txt
+-rw-r--r-- 1 Ольця 197121 0 May 25 15:41 qq2.txt
+-rw-r--r-- 1 Ольця 197121 0 May 25 15:41 qq3.txt
+
+
+
+
+
+
