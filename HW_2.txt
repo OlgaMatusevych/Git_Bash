@@ -1,4 +1,3 @@
-
 1. Сделать папку dir_
 Ольця@DESKTOP-N2IDPJA MINGW64 /D/QA
 $ mkdir dir_1
@@ -316,22 +315,3 @@ rm: cannot remove 'q1': Is a directory
 
 40 echo "Good jod"
 Good jod
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
